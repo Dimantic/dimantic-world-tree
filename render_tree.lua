@@ -25,6 +25,8 @@ local amount = 100
 local random_trees = TreeDataCache.get_random_batch(amount)
 linfo("Tree batches loaded: " .. #random_trees, nil)
 
+local CURRENT_ID = 1
+
 local trees_overview_node
 do
   local parent_node_id = 0 -- i am a child of the root node
@@ -33,10 +35,10 @@ do
   local node_type = 3
   trees_overview_node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
 end
-trees_overview_node.id = 1
+trees_overview_node.id = CURRENT_ID
 
 
-for _, random_tree in ipairs(random_trees) do 
+for _ , random_tree in ipairs(random_trees) do 
   linfo("In loop", random_tree)
   
   local new_parent_node_id = 0-- child of root node
@@ -47,6 +49,8 @@ for _, random_tree in ipairs(random_trees) do
     local author_id = -1
     local node_type = 3
     node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
+    CURRENT_ID = CURRENT_ID + 1
+    node.id = CURRENT_ID
   end
 
   table.insert(all_nodes, node)
