@@ -36,8 +36,8 @@ end
 trees_overview_node.id = 1
 
 
-local nodes = {}
 for _, random_tree in ipairs(random_trees) do 
+  linfo("In loop", random_tree)
   
   local new_parent_node_id = 0-- child of root node
   local node
@@ -49,7 +49,7 @@ for _, random_tree in ipairs(random_trees) do
     node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
   end
 
-  table.insert(nodes, node)
+  table.insert(all_nodes, node)
 
 end   
 
