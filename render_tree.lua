@@ -32,10 +32,12 @@ do
   local parent_node_id = 0 -- i am a child of the root node
   local content = "Trees"
   local author_id = -1
-  local node_type = 3
+  local node_type = "3"
   trees_overview_node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
 end
 trees_overview_node.id = CURRENT_ID
+trees_overview_node.order_number = CURRENT_ID
+table.insert(all_nodes,trees_overview_node)
 
 
 for _ , random_tree in ipairs(random_trees) do 
@@ -47,7 +49,7 @@ for _ , random_tree in ipairs(random_trees) do
     local parent_node_id = 1 -- i am a child of the root node
     local content = "Tree with id " ..  random_tree.id
     local author_id = -1
-    local node_type = 3
+    local node_type = "5"
     node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
     CURRENT_ID = CURRENT_ID + 1
     node.id = CURRENT_ID
@@ -70,7 +72,8 @@ local types_on_icons = {
   ["0"] = "fas fa-align-justify",
   ["1"] = "fas fa-search",
   ["3"] = "fas fa-play",
-  ["4"] = "fas fa-globe-europe"
+  ["4"] = "fas fa-globe-europe",
+  ["5"] = "fas fa-link"
 }
 
 Node.render_tree(all_nodes, types_on_icons)
