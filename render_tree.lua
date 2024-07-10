@@ -29,7 +29,7 @@ do
   local parent_node_id = 0 -- i am a child of the root node
   local content = "Trees"
   local author_id = -1
-  local node_type = "3"
+  local node_type = 3
   trees_overview_node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
 end
 trees_overview_node.id = 1
@@ -44,7 +44,7 @@ for _, random_tree in ipairs(random_trees) do
     local parent_node_id = 1 -- i am a child of the root node
     local content = "Tree with id " ..  random_tree.id
     local author_id = -1
-    local node_type = "3"
+    local node_type = 3
     node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
   end
 
