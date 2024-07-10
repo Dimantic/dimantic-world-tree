@@ -22,7 +22,8 @@ local all_nodes = {root_node}
 -- we need to use tree data cahce for this: get random ones
 
 local amount = 100
-local random_trees = TreeDataCache.get_random_batch(amount) 
+local random_trees = TreeDataCache.get_random_batch(amount)
+linfo("Tree batches loaded: " .. #random_trees, nil)
 
 local trees_overview_node
 do
