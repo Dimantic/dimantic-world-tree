@@ -43,10 +43,9 @@ table.insert(all_nodes,trees_overview_node)
 for _ , random_tree in ipairs(random_trees) do 
   linfo("In loop", random_tree)
   
-  local new_parent_node_id = 0-- child of root node
   local node
   do
-    local parent_node_id = 1 -- i am a child of the root node
+    local parent_node_id = trees_overview_node.id -- i am a child of the root node
     local content = "Tree with id " ..  random_tree.id
     local author_id = -1
     local node_type = "5"
