@@ -51,6 +51,7 @@ for _ , random_tree in ipairs(random_trees) do
     node = Node.Node.create_new_node(parent_node_id, content, author_id, node_type) 
     CURRENT_ID = CURRENT_ID + 1
     node.id = CURRENT_ID
+    node.order_number = CURRENT_ID
   end
 
   table.insert(all_nodes, node)
